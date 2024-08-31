@@ -1,0 +1,32 @@
+{
+  "name": "discord.js-bot-template",
+  "description": "A template for creating a Discord bot using discord.js",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "",
+  "homepage": "https://github.com/FantaCovid-19/discord.js-bot-template#readme",
+  "bugs": {
+    "url": "https://github.com/FantaCovid-19/discord.js-bot-template/issues",
+    "email": "project@mrfantasma.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FantaCovid-19/discord.js-bot-template.git"
+  },
+  "author": {
+    "name": "FantaCovid-19",
+    "email": "contact@mrfantasma.com"
+  },
+  "scripts": {
+    "prepare": "husky",
+    "commitlint": "commitlint --edit",
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "discord.js": "^14.15.3"
+  },
+  "devDependencies": {
+    "husky": "^9.1.5"
+  }
+}
