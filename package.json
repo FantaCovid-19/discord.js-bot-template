@@ -20,6 +20,7 @@
   "scripts": {
     "prepare": "husky",
     "commitlint": "commitlint --edit",
+    "release": "standard-version -s --signed",
     "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
