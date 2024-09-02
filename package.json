@@ -1,7 +1,7 @@
 {
   "name": "discord.js-bot-template",
   "description": "A template for creating a Discord bot using discord.js",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "license": "",
   "homepage": "https://github.com/FantaCovid-19/discord.js-bot-template#readme",
