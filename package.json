@@ -26,27 +26,34 @@
     "format": "prettier --check .",
     "format:fix": "prettier --write --list-different .",
     "start": "node .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon ."
   },
   "dependencies": {
-    "discord.js": "^14.15.3"
+    "discord.js": "^14.15.3",
+    "module-alias": "^2.2.3"
   },
   "devDependencies": {
+    "dotenv": "^16.4.5",
     "eslint": "^9.9.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "husky": "^9.1.5",
     "lint-staged": "^15.2.10",
+    "nodemon": "^3.1.4",
     "prettier": "^3.3.3"
   },
   "lint-staged": {
     "*.js": [
-      "prettier --write",
+      "prettier --write --ignore-unknown",
       "eslint --fix",
       "eslint"
     ],
     "*.json": [
       "prettier --write"
     ]
+  },
+  "_moduleAliases": {
+    "@": ".",
+    "@src": "src/"
   }
 }
