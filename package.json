@@ -21,6 +21,10 @@
     "prepare": "husky",
     "commitlint": "commitlint --edit",
     "release": "standard-version -s --signed",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write --list-different .",
     "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -28,6 +32,21 @@
     "discord.js": "^14.15.3"
   },
   "devDependencies": {
-    "husky": "^9.1.5"
+    "eslint": "^9.9.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix",
+      "eslint"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
   }
 }
