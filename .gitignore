@@ -1,2 +1,11 @@
-# Npm Ignore
-node_modules
+# Editor
+.vscode/
+
+# Node
+node_modules/
+
+# Environment
+.env*
+
+# Logs
+logs/
