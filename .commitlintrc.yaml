@@ -31,3 +31,10 @@ rules:
     - 2
     - always
     - - release
+
+parserPreset:
+  parserOpts:
+    headerCorrespondence: ['type', 'scope', 'subject']
+    issuePrefixes: ['#']
+    referenceActions: ['Closes', 'Fixes', 'Resolves']
+    noteKeywords: ['BREAKING CHANGE']
