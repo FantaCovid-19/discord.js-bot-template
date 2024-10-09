@@ -5,7 +5,10 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["./*"],
-      "@src/*": ["./src/*"]
+      "@src/*": ["./src/*"],
+      "@config/*": ["./config/*"],
+      "@helpers/*": ["./src/helpers/*"],
+      "@structures/*": ["./src/structures/*"]
     }
   },
   "exclude": ["node_modules", "**/node_modules/*"]
