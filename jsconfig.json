@@ -8,7 +8,9 @@
       "@src/*": ["./src/*"],
       "@config/*": ["./config/*"],
       "@helpers/*": ["./src/helpers/*"],
-      "@structures/*": ["./src/structures/*"]
+      "@handlers/*": ["./src/handlers/*"],
+      "@structures/*": ["./src/structures/*"],
+      "@types/*": ["./src/structures/types/*"]
     }
   },
   "exclude": ["node_modules", "**/node_modules/*"]
