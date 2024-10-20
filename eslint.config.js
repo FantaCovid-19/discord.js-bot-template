@@ -4,7 +4,7 @@ module.exports = [
   eslintConfigPrettier,
   {
     files: ['src/**/*.js'],
-    ignore: [
+    ignores: [
       '**/.github',
       '**/data',
       '**/node_modules',
@@ -18,6 +18,7 @@ module.exports = [
       '**/package-lock.json',
       '**/logs.txt',
       '**/README.md',
+      'src/sructures/types/*',
     ],
   },
   {

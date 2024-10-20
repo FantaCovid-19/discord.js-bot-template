@@ -24,7 +24,7 @@ rules:
   subject-case: [2, always, sentence-case]
   subject-full-stop: [2, never, '.']
   body-min-length: [2, always, 1]
-  body-max-line-length: [2, always, 80]
+  body-max-line-length: [2, always, 250]
   scope-empty: [0, always]
   scope-case: [2, always, lower-case]
   scope-enum:
