@@ -22,7 +22,7 @@ module.exports = {
   ephemeral: false,
   userPermissions: [],
   cooldown: 0,
-  async execute() {
+  execute: (_interaction) => {
     throw new Error('execute function not implemented');
   },
 };

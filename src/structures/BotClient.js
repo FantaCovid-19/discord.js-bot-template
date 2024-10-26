@@ -1,8 +1,9 @@
-const { Client, Collection, GatewayIntentBits, Partials, ActivityType, PresenceUpdateStatus, ApplicationCommandType } = require('discord.js');
+const { Client, Collection, GatewayIntentBits, Partials, ApplicationCommandType } = require('discord.js');
 
 const Events = require('./Event');
 const Commands = require('./Command');
 const { log, error } = require('@helpers/Logger');
+const Context = require('./Context');
 
 const { Guilds, GuildMessages, MessageContent, GuildInvites, GuildMembers, GuildPresences, GuildMessageReactions, GuildVoiceStates } =
   GatewayIntentBits;
@@ -38,11 +39,16 @@ module.exports = class BotClient extends Client {
 
     this.eventLoader = new Events(this);
     this.commandLoader = new Commands(this);
+    this.contextLoader = new Context(this);
   }
 
+  /**
+   * Initialize the bot
+   */
   async initialize() {
     this.eventLoader.loadEvents();
     this.commandLoader.loadFileCommands();
+    this.contextLoader.loadFileContexts();
 
     this.login(process.env.DISCORD_TOKEN);
   }
@@ -60,7 +66,6 @@ module.exports = class BotClient extends Client {
   /**
    * Register interactions in the bot
    * @param {string} [guildId]
-   * @returns {Promise<void>}
    */
   async registerInteractions(guildId) {
     const toRegister = [];
@@ -74,12 +79,12 @@ module.exports = class BotClient extends Client {
       }))
       .forEach((cmd) => toRegister.push(cmd));
 
-    // this.contextMenus
-    //   .map((ctx) => ({
-    //     name: ctx.name,
-    //     type: ctx.type,
-    //   }))
-    //   .forEach((ctx) => toRegister.push(ctx));
+    this.contextMenus
+      .map((ctx) => ({
+        name: ctx.name,
+        type: ctx.type,
+      }))
+      .forEach((ctx) => toRegister.push(ctx));
 
     if (!guildId) {
       await this.application.commands.set(toRegister);

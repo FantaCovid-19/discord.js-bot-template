@@ -18,11 +18,22 @@ module.exports = class Commands {
     this.client = client;
   }
 
-  loadCommand(cmd) {
+  /**
+   * Register command to the client
+   * @private
+   * @param {import("@types/CommandType")} cmd
+   */
+  #loadCommand(cmd) {
     if (cmd.command?.enabled) {
       const index = this.client.commands.length;
-
       if (this.client.commandIndex.has(cmd.name)) throw new Error(`Command ${cmd.name} already exists.`);
+
+      if (Array.isArray(cmd.command.aliases)) {
+        for (const alias of cmd.command.aliases) {
+          if (this.client.commandIndex.has(alias)) throw new Error(`Alias ${alias} already exists.`);
+          this.client.commandIndex.set(alias.toLowerCase(), index);
+        }
+      }
 
       this.client.commandIndex.set(cmd.name.toLowerCase(), index);
       this.client.commands.push(cmd);
@@ -39,13 +50,17 @@ module.exports = class Commands {
     }
   }
 
-  loadFileCommands() {
+  /**
+   * Load all commands from the commands folder
+   * @param {string} directory - The directory to load the commands from (default: 'src/commands')
+   */
+  loadFileCommands(directory = 'src/commands') {
     log('(/) Loading commands...');
 
     let success = 0,
       failed = 0;
     const clientCommands = [];
-    const files = recursiveReadDirSync('src/commands');
+    const files = recursiveReadDirSync(directory);
 
     for (const file of files) {
       const cmdFiles = basename(file);
@@ -54,7 +69,7 @@ module.exports = class Commands {
         const cmd = require(file);
 
         if (typeof cmd !== 'object') continue;
-        this.loadCommand(cmd);
+        this.#loadCommand(cmd);
 
         clientCommands.push([cmdFiles, 'Passed']);
         success++;

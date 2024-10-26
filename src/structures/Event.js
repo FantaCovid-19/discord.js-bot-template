@@ -20,7 +20,7 @@ module.exports = class Events {
 
   /**
    * Load all events from the events folder
-   * @param {string} directory - The directory to load the events from
+   * @param {string} directory - The directory to load the events from (default: 'src/events')
    */
   loadEvents(directory = 'src/events') {
     log('(+) Loading events...');

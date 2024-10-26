@@ -61,10 +61,10 @@ module.exports = {
     ephemeral: false,
     options: [],
   },
-  async messageExecute(_message, _args, _data) {
+  messageExecute: (_message, _args, _data) => {
     throw new Error('messageExecute function not implemented');
   },
-  async interactionExecute(_interaction, _data) {
+  interactionExecute: (_interaction, _data) => {
     throw new Error('interactionExecute function not implemented');
   },
 };
