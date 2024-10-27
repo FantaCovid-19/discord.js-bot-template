@@ -20,17 +20,17 @@ const streams = pretty({
   customPrettifiers: {
     time: (timestamp) => `[⌚ ${timestamp}]`,
     level: (logLevel, key, log, { labelColorized }) => {
-      if (logLevel === '10') {
+      if (logLevel === 10) {
         return `[📝 ${labelColorized}]`;
-      } else if (logLevel === '20') {
+      } else if (logLevel === 20) {
         return `[🐞 ${labelColorized}]`;
-      } else if (logLevel === '30') {
+      } else if (logLevel === 30) {
         return `[ℹ️ ${labelColorized}]`;
-      } else if (logLevel === '40') {
+      } else if (logLevel === 40) {
         return `[⚠️  ${labelColorized}]`;
-      } else if (logLevel === '50') {
+      } else if (logLevel === 50) {
         return `[❌ ${labelColorized}]`;
-      } else if (logLevel === '60') {
+      } else if (logLevel === 60) {
         return `[🚨 ${labelColorized}]`;
       }
     },
@@ -79,7 +79,7 @@ const logger = pino.default(
 module.exports = class Logger {
   /**
    * Log a message
-   * @param {string} message
+   * @param {String} message
    */
   static log(message) {
     logger.info(message);
@@ -87,17 +87,21 @@ module.exports = class Logger {
 
   /**
    * Log a warning message
-   * @param {string} message
-   * @param {object} [warn]
+   * @param {String} message
+   * @param {Object} [warn]
    */
   static warn(message, warn) {
-    logger.warn(warn, `${message}: ${warn?.message}`);
+    if (warn) {
+      logger.warn(warn, `${message}: ${warn?.message}`);
+    } else {
+      logger.warn(message);
+    }
   }
 
   /**
    * Log an error message
-   * @param {string} message
-   * @param {object} [err]
+   * @param {String} message
+   * @param {Object} [err]
    */
   static error(message, err) {
     if (err) {
@@ -109,7 +113,7 @@ module.exports = class Logger {
 
   /**
    * Log a debug message
-   * @param {string} message
+   * @param {String} message
    */
   static debug(message) {
     logger.debug(message);

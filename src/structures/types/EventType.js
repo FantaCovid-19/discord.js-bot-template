@@ -1,9 +1,21 @@
 /**
+ * @typedef {import('discord.js').Events} EventType
+ * @typedef {import('discord.js').ClientEvents} ClientEventType
+ */
+
+/**
+ * @callback EventExecuteFunction
+ * @param {import('@structures/BotClient')} _client - The client object
+ * @param  {[...*] | any} _args - Additional arguments
+ * @returns {void}
+ */
+
+/**
  * @typedef {Object} EventData
- * @property {import('discord.js').Events} name - The name of the event.
- * @property {boolean} enabled - Whether the event is enabled or not.
- * @property {boolean} once - Whether the event should only be executed once.
- * @property {function(import('@src/structures').BotClient, ...*): void} execute - The function to execute when the event is triggered.
+ * @property {EventType} name - The name of the event.
+ * @property {Boolean} enabled - Whether the event is enabled or not.
+ * @property {Boolean} once - Whether the event should only be executed once.
+ * @property {EventExecuteFunction} execute - The function to execute when the event is triggered.
  */
 
 /**

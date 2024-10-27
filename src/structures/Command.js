@@ -14,13 +14,13 @@ const tableConfig = {
 };
 
 module.exports = class Commands {
+  /** @param {import('@structures/BotClient')} client */
   constructor(client) {
     this.client = client;
   }
 
   /**
    * Register command to the client
-   * @private
    * @param {import("@types/CommandType")} cmd
    */
   #loadCommand(cmd) {

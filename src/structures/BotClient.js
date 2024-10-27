@@ -2,8 +2,9 @@ const { Client, Collection, GatewayIntentBits, Partials, ApplicationCommandType 
 
 const Events = require('./Event');
 const Commands = require('./Command');
-const { log, error } = require('@helpers/Logger');
 const Context = require('./Context');
+const { log, error } = require('@helpers/Logger');
+const config = require('@config');
 
 const { Guilds, GuildMessages, MessageContent, GuildInvites, GuildMembers, GuildPresences, GuildMessageReactions, GuildVoiceStates } =
   GatewayIntentBits;
@@ -19,22 +20,18 @@ module.exports = class BotClient extends Client {
     });
 
     this.wait = require('util').promisify(setTimeout);
-    this.config = {};
 
-    /**
-     * @type {import('@types/CommandType')[]}
-     */
+    /** @type {import('@types/ConfigType')} */
+    this.config = config;
+
+    /** @type {import('@types/CommandType')[]} */
     this.commands = [];
     this.commandIndex = new Collection();
 
-    /**
-     * @type {Collection<string, import('@types/CommandType')>}
-     */
+    /** @type {Collection<string, import('@types/CommandType')>} */
     this.slashCommands = new Collection();
 
-    /**
-     * @type {Collection<string, import('@types/ContextType')>}
-     */
+    /** @type {Collection<string, import('@types/ContextType')>} */
     this.contextMenus = new Collection();
 
     this.eventLoader = new Events(this);

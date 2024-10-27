@@ -15,6 +15,7 @@ const tableConfig = {
 };
 
 module.exports = class Context {
+  /** @param {import('@structures/BotClient')} client */
   constructor(client) {
     this.client = client;
   }

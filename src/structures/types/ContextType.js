@@ -1,13 +1,27 @@
 /**
+ * @typedef {import('discord.js').ApplicationCommandType} ApplicationCommandType
+ */
+
+/**
+ * @typedef {import('discord.js').PermissionResolvable[]} PermissionResolvable
+ */
+
+/**
+ * @callback ContextExecuteFunction
+ * @param {import('discord.js').ContextMenuCommandInteraction} _interaction - The interaction object
+ * @returns {void}
+ */
+
+/**
  * @typedef {Object} ContextType
- * @property {string} name - The name of the context menu
- * @property {string} description - The description of the context menu
- * @property {import('discord.js').ApplicationCommandType} type - The type of the context menu
- * @property {boolean} enabled - Whether the context menu is enabled or not
- * @property {boolean} ephemeral - Whether the response should be ephemeral or not
- * @property {import('discord.js').PermissionResolvable[]} [userPermissions] - The permissions required by the bot
- * @property {number} [cooldown=0] - The cooldown of the context menu
- * @property {function(import('discord.js').ContextMenuCommandInteraction)} execute - The function to execute the context menu
+ * @property {String} name - The name of the context menu
+ * @property {String} description - The description of the context menu
+ * @property {ApplicationCommandType} type - The type of the context menu
+ * @property {Boolean} enabled - Whether the context menu is enabled or not
+ * @property {Boolean} ephemeral - Whether the response should be ephemeral or not
+ * @property {PermissionResolvable} [userPermissions] - The permissions required by the bot
+ * @property {Number} [cooldown] - The cooldown of the context menu
+ * @property {ContextExecuteFunction} execute - The function to execute the context menu
  */
 
 /**

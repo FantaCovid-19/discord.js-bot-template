@@ -14,6 +14,7 @@ const tableConfig = {
 };
 
 module.exports = class Events {
+  /** @param {import('@structures/BotClient')} client */
   constructor(client) {
     this.client = client;
   }
