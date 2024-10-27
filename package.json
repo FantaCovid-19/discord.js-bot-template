@@ -21,8 +21,8 @@
     "prepare": "husky",
     "commitlint": "commitlint --edit",
     "release": "standard-version -s --signed",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint . && markdownlint -i node_modules .",
+    "lint:fix": "eslint . --fix && markdownlint -i node_modules -f .",
     "format": "prettier --check .",
     "format:fix": "prettier --write --list-different .",
     "start": "chcp 65001 && node .",
@@ -53,6 +53,9 @@
     ],
     "*.json": [
       "prettier --write"
+    ],
+    "*.md": [
+      "markdownlint -i node_modules -f ."
     ]
   },
   "_moduleAliases": {

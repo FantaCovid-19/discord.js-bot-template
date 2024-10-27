@@ -1,11 +1,10 @@
 # Changelog
-## [0.1.0](https://github.com/FantaCovid-19/discord.js-bot-template/compare/v0.0.1...v0.1.0) (2024-10-27)
 
+## [0.1.0](https://github.com/FantaCovid-19/discord.js-bot-template/compare/v0.0.1...v0.1.0) (2024-10-27)
 
 ### 👷 Continuous Integration
 
 * 🐳 Add dependabot and devcontainer ([cb15a72](https://github.com/FantaCovid-19/discord.js-bot-template/commit/cb15a728ce06f068a2eadfa484ad9b71af5cd169))
-
 
 ### ✨ Features
 
@@ -25,7 +24,6 @@
 * 🚧 Add Client and Handlers Discord Bot ([5c43e29](https://github.com/FantaCovid-19/discord.js-bot-template/commit/5c43e292b1aca547edd68147f4fc8c73b031a989))
 * 🚧 Add Context Menu ([85404c1](https://github.com/FantaCovid-19/discord.js-bot-template/commit/85404c18cb3a5e503ea1a6f5dab247d1fea5abe0))
 
-
 ### 📝 Documentation
 
 * 📝 Added JsDoc documentation ([bf89290](https://github.com/FantaCovid-19/discord.js-bot-template/commit/bf892901df84227b81c607563c5a6877c7a1da10))
@@ -34,7 +32,6 @@
 * 📝 Update documentation JSDoc ([0234680](https://github.com/FantaCovid-19/discord.js-bot-template/commit/0234680fdcc816d1a9ac5419496c648acb9a330f))
 
 ### 0.0.1 (2024-09-02)
-
 
 ### ✨ Features
 
