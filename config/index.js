@@ -2,6 +2,7 @@
 module.exports = {
   OwnerID: [],
   SupportServer: '',
+  checkUpdates: true,
   PrefixCommand: {
     enabled: true,
     defaultPrefix: '!',

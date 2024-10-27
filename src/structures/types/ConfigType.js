@@ -26,6 +26,7 @@
  * @typedef {Object} ConfigType
  * @property {Array<String>} OwnerID - List of owner's user id
  * @property {String} SupportServer - The support server invite link
+ * @property {Boolean} checkUpdates - Whether the bot should check for updates or not
  * @property {PrefixCommandType} PrefixCommand - The prefix command configuration
  * @property {InteractionType} Interaction - The interaction configuration
  * @property {PresenceType} Presence - The presence configuration
@@ -38,6 +39,7 @@
 module.exports = {
   OwnerID: [],
   SupportServer: '',
+  checkUpdates: true,
   PrefixCommand: {
     enabled: true,
     defaultPrefix: '!',
