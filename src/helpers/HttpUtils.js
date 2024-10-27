@@ -1,7 +1,6 @@
 module.exports = class HttpUtils {
   /**
    * Make a GET request to a URL and return the response.
-   *
    * @param {String} url - The URL to make the request to.
    * @param {Object} [options] - The fetch options.
    * @returns {Promise<Object>}
