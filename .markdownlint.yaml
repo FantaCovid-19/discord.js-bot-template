@@ -1,2 +1,9 @@
 default: true
+
 MD024: false
+
+MD013:
+  line_length: 400
+
+MD029: false
+MD033: false
