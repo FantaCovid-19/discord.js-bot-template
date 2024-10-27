@@ -1,9 +1,7 @@
 const { Events } = require('discord.js');
 const { log } = require('@helpers/Logger');
 
-/**
- * @type {import('@types/EventType')}
- */
+/** @type {import('@types/EventType')} */
 module.exports = {
   name: Events.ClientReady,
   once: true,
